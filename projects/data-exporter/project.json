@@ -1,0 +1,24 @@
+{
+  "name": "data-exporter",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "projects/data-exporter/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "data-exporter:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "data-exporter:build:development"
+        },
+        "production": {
+          "buildTarget": "data-exporter:build:production"
+        }
+      }
+    }
+  }
+}
