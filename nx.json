@@ -43,6 +43,7 @@
         "serveTargetName": "serve",
         "previewTargetName": "preview"
       }
-    }
+    },
+    "@nxlv/python"
   ]
 }
