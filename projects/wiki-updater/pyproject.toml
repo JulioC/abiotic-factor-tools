@@ -1,6 +1,6 @@
 [tool.coverage.run]
 branch = true
-source = [ "wiki_updater" ]
+source = [ "src" ]
 
 [tool.coverage.report]
 exclude_lines = ['if TYPE_CHECKING:']
@@ -15,10 +15,12 @@ license = 'Proprietary'
 readme = 'README.md'
 
   [[tool.poetry.packages]]
-  include = "wiki_updater"
+  include = "src"
 
   [tool.poetry.dependencies]
   python = ">=3.9,<3.11"
+  mwcleric = "^0.9.8"
+  mwparserfromhell = "^0.6.6"
 
   [tool.poetry.group.dev.dependencies]
   autopep8 = "2.0.2"

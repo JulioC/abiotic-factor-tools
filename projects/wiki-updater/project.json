@@ -2,7 +2,7 @@
   "name": "wiki-updater",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "projects/wiki-updater/wiki_updater",
+  "sourceRoot": "projects/wiki-updater/src",
   "targets": {
     "lock": {
       "executor": "@nxlv/python:run-commands",
@@ -48,6 +48,17 @@
       "outputs": ["{workspaceRoot}/reports/projects/wiki-updater/pylint.txt"],
       "options": {
         "outputFile": "reports/projects/wiki-updater/pylint.txt"
+      }
+    },
+    "run": {
+      "executor": "@nxlv/python:run-commands",
+      "outputs": [
+        "{workspaceRoot}/reports/projects/wiki-updater/unittests",
+        "{workspaceRoot}/coverage/projects/wiki-updater"
+      ],
+      "options": {
+        "command": "poetry run python src",
+        "cwd": "projects/wiki-updater"
       }
     }
   },
