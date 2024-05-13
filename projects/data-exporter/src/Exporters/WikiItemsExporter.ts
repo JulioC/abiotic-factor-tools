@@ -4,7 +4,8 @@ import { ParsedRecipe, RecipesParserService } from '../Parsers';
 import { ItemsParserService, ParsedItem } from '../Parsers/Items';
 import { BaseExporter } from './BaseExporter';
 import {
-  WIKI_ALLOWED_ITEMS,
+  WIKI_ALLOWED_LIQUIDS,
+  WIKI_CATEGORIES,
   WIKI_GEAR_SLOTS,
   WIKI_IGNORED_ITEMS,
   WIKI_ITEM_NAME_OVERRIDES,
@@ -40,12 +41,6 @@ export class WikiItemsExporter extends BaseExporter {
   }
 
   protected async getData() {
-    console.log([
-      ...new Set(
-        this.parsedItems.flatMap((p) => p.cookableData.farmableDataRow)
-      ),
-    ]);
-
     const items = await Promise.all(
       this.parsedItems
         .filter((parsedItem) => !this.isIgnored(parsedItem))
@@ -119,7 +114,8 @@ export class WikiItemsExporter extends BaseExporter {
 
   protected formatItemName(parsedItem: ParsedItem) {
     const override = WIKI_ITEM_NAME_OVERRIDES[parsedItem.rowName];
-    return override ?? parsedItem.name;
+    const name = override ?? parsedItem.name;
+    return name.replace(/"/g, '');
   }
 
   protected formatCategory(parsedItem: ParsedItem) {
@@ -128,7 +124,7 @@ export class WikiItemsExporter extends BaseExporter {
     );
 
     // TODO: we need a better heuristic, most items required hard-coded recipes
-    return firstRecipe?.category ?? undefined;
+    return WIKI_CATEGORIES[firstRecipe?.category ?? ''];
   }
 
   protected formatBatteryCapacity(parsedItem: ParsedItem) {
@@ -142,7 +138,7 @@ export class WikiItemsExporter extends BaseExporter {
   protected formatLiquidData(parsedItem: ParsedItem) {
     // Ignore unknown liquids
     const allowedLiquids = parsedItem.liquidData.allowedLiquids.filter(
-      (liquid) => WIKI_ALLOWED_ITEMS.includes(liquid)
+      (liquid) => WIKI_ALLOWED_LIQUIDS.includes(liquid)
     );
 
     if (!allowedLiquids.length) {
@@ -153,12 +149,6 @@ export class WikiItemsExporter extends BaseExporter {
       allowedLiquids,
       liquidCapacity: parsedItem.liquidData.maxLiquid,
     };
-  }
-
-  protected formatResearchMaterial(parsedItem: ParsedItem) {
-    return parsedItem.gameplayTags
-      .find((t) => t.startsWith('Item.Material.'))
-      ?.replace('Item.Material.', '');
   }
 
   protected formatScrapResults(parsedItem: ParsedItem) {

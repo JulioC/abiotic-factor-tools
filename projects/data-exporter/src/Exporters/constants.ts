@@ -7,6 +7,17 @@ export const WIKI_IGNORED_ITEMS: string[] = [
   'Deployable_Glowstick',
   // Name is duplicated with food_peccary_leg_burnt, this one appears to be unused
   'food_roastpecc_burnt',
+  // Unwanted items
+  'UNKNOWN (Plant Antelight)',
+  'UNKNOWN (Plant VelcroPlant)',
+  'UNKNOWN (Plant SpaceLettuce)',
+  'UNKNOWN (Plant Egg)',
+  'UNKNOWN (Plant RopePlant)',
+  'UNKNOWN (Plant Super Tomato)',
+  'UNKNOWN (Plant Greyeb)',
+  'UNKNOWN (Plant Wheat)',
+  'UNKNOWN (Plant Tomato)',
+  'UNKNOWN (Plant Corn)',
 ];
 
 /**
@@ -35,7 +46,7 @@ export const WIKI_ITEM_NAME_OVERRIDES: Record<string, string> = {
   petrock: 'Pet Rock (Pickup)',
 };
 
-export const WIKI_ALLOWED_ITEMS = [
+export const WIKI_ALLOWED_LIQUIDS = [
   'Soup',
   'TaintedWater',
   'Water',
@@ -108,4 +119,18 @@ export const WIKI_STATUSES: Record<string, string> = {
   Debuff_Spores: 'Lung Infection',
   Debuff_Stinky: 'Stinky',
   Debuff_StuffySuit: 'Stuffy Suit',
+};
+
+export const WIKI_CATEGORIES: Record<string, string> = {
+  Resource: 'Resources and Sub-components',
+  Construction: 'Furniture and Benches',
+  Tools: 'Tools',
+  Electricity: 'Light and Power',
+  Defense: 'Base defense',
+  Weapon: 'Weapons and Ammo',
+  Gear: 'Armor and Gear',
+  Health: 'Health and Medical',
+  Food: 'Food and Cooking',
+  Farming: 'Farming',
+  Travel: 'Travel and Vehicles',
 };
