@@ -7,7 +7,7 @@ export const WIKI_IGNORED_ITEMS: string[] = [
   'Deployable_Glowstick',
   // Name is duplicated with food_peccary_leg_burnt, this one appears to be unused
   'food_roastpecc_burnt',
-  // Unwanted items
+  // Developer or unused items
   'UNKNOWN (Plant Antelight)',
   'UNKNOWN (Plant VelcroPlant)',
   'UNKNOWN (Plant SpaceLettuce)',
@@ -18,6 +18,9 @@ export const WIKI_IGNORED_ITEMS: string[] = [
   'UNKNOWN (Plant Wheat)',
   'UNKNOWN (Plant Tomato)',
   'UNKNOWN (Plant Corn)',
+  'ITEM MISSING',
+  'Chemistry Bench',
+  'Hard Drive',
 ];
 
 /**

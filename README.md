@@ -15,9 +15,20 @@ Versions below are known to be working, but other versions might be compatible.
 ## Usage
 
 - Install project using `pnpm i`
+- Create your `.env` following the `.env.example` file
 - Build projects using `npx nx run-many -t build --all`
 
-TODO: add binary usage instructions
+### Extracting content from the game
+
+Use FModel to extract content from the game. In a single root folder, extract Blueprints and StringTables as JSON, and Textures as PNG.
+
+### Exporting JSON files from extracted ones
+
+Run `npx nx run data-exporter:serve`. This process is can be stopped once the files are exported
+
+### Update th wiki
+
+Run `npx nx run wiki-updater:run`. Follow the credential instructions from [mwcleric](https://pypi.org/project/mwcleric/).
 
 ## Development
 

@@ -2,7 +2,9 @@
   "name": "@abiotic-factor-tools/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+
+  },
   "private": true,
   "devDependencies": {
     "@nx/esbuild": "19.0.0",
