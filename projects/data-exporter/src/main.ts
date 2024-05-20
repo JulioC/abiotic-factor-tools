@@ -2,6 +2,7 @@ import 'reflect-metadata';
 import { container } from 'tsyringe';
 import { WikiInventoryIconsExporter } from './Exporters/WikiInventoryIconsExporter';
 import { WikiItemsExporter } from './Exporters/WikiItemsExporter';
+import { WikiRecipesExporter } from './Exporters/WikiRecipesExporter';
 import { TOKEN_OBJECTS_BASE_PATH } from './UnrealEngine';
 
 if (!process.env.ABF_EXTRACTED_PATH)
@@ -16,6 +17,7 @@ container.register(TOKEN_OBJECTS_BASE_PATH, { useValue: INPUT_PATH });
 
 const itemsExporter = container.resolve(WikiItemsExporter);
 const inventoryIconsExporter = container.resolve(WikiInventoryIconsExporter);
+const wikiRecipesExporter = container.resolve(WikiRecipesExporter);
 
 async function run() {
   await runExporters();
@@ -23,8 +25,9 @@ async function run() {
 
 async function runExporters() {
   const exporters = [
-    itemsExporter,
-    // inventoryIconsExporter
+    // itemsExporter,
+    // inventoryIconsExporter,
+    wikiRecipesExporter,
   ];
 
   for (const exporter of exporters) {

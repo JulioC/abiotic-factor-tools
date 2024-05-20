@@ -16,20 +16,32 @@ export class RecipesParserService {
   async getParsedRecipes() {
     if (!this.cachedRecipes) {
       const rows = await this.getRecipeRows();
-      this.cachedRecipes = await Promise.all(
+      const recipesNestedArray = await Promise.all(
         Object.entries(rows).map(([rowName, row]) =>
           this.recipeRowParser.parse(rowName, row)
         )
       );
+      this.cachedRecipes = recipesNestedArray.flat();
     }
 
     return this.cachedRecipes;
   }
 
-  protected getRecipeRows() {
-    return this.dataTableService.getAllRows<RecipeTableRow>({
-      ObjectName: 'ItemTable_Global',
-      ObjectPath: '/Game/Blueprints/DataTables/DT_Recipes.0',
-    });
+  protected async getRecipeRows() {
+    const itemRecipeRows =
+      await this.dataTableService.getAllRows<RecipeTableRow>({
+        ObjectName: 'ItemTable_Global',
+        ObjectPath: '/Game/Blueprints/DataTables/DT_Recipes.0',
+      });
+    // TODO: include soups, but add a flag to them?
+    // const soupRecipeRows =
+    //   await this.dataTableService.getAllRows<RecipeTableRow>({
+    //     ObjectName: 'ItemTable_Global',
+    //     ObjectPath: '/Game/Blueprints/DataTables/DT_SoupRecipes.0',
+    //   });
+    return {
+      ...itemRecipeRows,
+      //  ...soupRecipeRows
+    };
   }
 }

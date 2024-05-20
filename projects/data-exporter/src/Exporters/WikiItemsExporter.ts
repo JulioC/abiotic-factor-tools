@@ -41,11 +41,10 @@ export class WikiItemsExporter extends BaseExporter {
   }
 
   protected async getData() {
-    const items = await Promise.all(
-      this.parsedItems
-        .filter((parsedItem) => !this.isIgnored(parsedItem))
-        .map((parsedItem) => this.formatItem(parsedItem))
-    );
+    const items = this.parsedItems
+      .filter((parsedItem) => !this.isIgnored(parsedItem))
+      .map((parsedItem) => this.formatItem(parsedItem));
+
     return _.keyBy(items, 'name');
   }
 
@@ -115,7 +114,7 @@ export class WikiItemsExporter extends BaseExporter {
   protected formatItemName(parsedItem: ParsedItem) {
     const override = WIKI_ITEM_NAME_OVERRIDES[parsedItem.rowName];
     const name = override ?? parsedItem.name;
-    return name.replace(/"/g, '');
+    return name.replace(/"/g, '').replace(/ & /g, ' and ').replace(/&/g, '');
   }
 
   protected formatCategory(parsedItem: ParsedItem) {

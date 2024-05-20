@@ -3,10 +3,21 @@ export const WIKI_IGNORED_ITEMS: string[] = [
   'tutorialheater',
   // Same as the `money`, apparently no differences
   'money_stack',
-  // Appears to be the a developer version of GlowStick
+  // This is what glowstick becomes when they are thrown, should not appear in inventory
   'Deployable_Glowstick',
   // Name is duplicated with food_peccary_leg_burnt, this one appears to be unused
   'food_roastpecc_burnt',
+  // Some items have unique variants, we'll need to add them manually
+  'Abstract Square Painting (Regular)',
+  'Abstract Square Painting (Large)',
+  'Abstract Square Painting (Fancy)',
+  'Abstract Square Painting  (Large Fancy)',
+  'Colorful Abstract Painting (Regular)',
+  'Colorful Abstract Painting (Fancy)',
+  'Painting of a Man (Regular)',
+  'Painting of a Man (Fancy)',
+  'Arcade Machine',
+  'Poster',
   // Developer or unused items
   'UNKNOWN (Plant Antelight)',
   'UNKNOWN (Plant VelcroPlant)',
@@ -21,6 +32,7 @@ export const WIKI_IGNORED_ITEMS: string[] = [
   'ITEM MISSING',
   'Chemistry Bench',
   'Hard Drive',
+  '40mm High Explosive',
 ];
 
 /**
