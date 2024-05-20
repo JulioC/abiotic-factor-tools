@@ -5,7 +5,8 @@ import time
 from mwcleric import AuthCredentials
 from mwcleric import WikiggClient
 
-WIKITEXT = """{{{{Item
+WIKITEXT = """{{{{dev}}}}
+{{{{Item
 |name={name}}}}}
 
 '''{name}''' is an [[item]] in ''[[Abiotic Factor]]''.
