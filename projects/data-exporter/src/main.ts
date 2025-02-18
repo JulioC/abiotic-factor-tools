@@ -26,8 +26,8 @@ async function run() {
 async function runExporters() {
   const exporters = [
     // itemsExporter,
-    // inventoryIconsExporter,
-    wikiRecipesExporter,
+    inventoryIconsExporter,
+    // wikiRecipesExporter,
   ];
 
   for (const exporter of exporters) {

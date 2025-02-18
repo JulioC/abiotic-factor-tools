@@ -21,8 +21,11 @@ export class EnumsService {
     const displayNameEntry = enumObject.Properties?.DisplayNameMap.find(
       (entry) => !!entry[key]
     );
+    const displayNameEntry2 = enumObject.Properties?.DisplayNameMap.find(
+      (entry) => typeof entry.Key === 'string' && entry.Key === key
+    );
 
-    const handle = displayNameEntry?.[key];
+    const handle = displayNameEntry?.[key] ?? displayNameEntry2?.Value;
     if (!handle) {
       throw new Error(`DisplayNameEntry not found for enum ${value}`);
     }

@@ -7,156 +7,156 @@ import {
 
 export interface ItemTableRow {
   // Texts
-  ItemName_51_B88648C048EE5BC2885E4E95F3E13F0A: StringHandle;
-  ItemDescription_38_E5F7B38A4F3C41EB9DA52CA14654D303: StringHandle;
-  ItemFlavorText_39_12D05DD74EA145A5E7D1159C7F326177: StringHandle;
+  ItemName: StringHandle;
+  ItemDescription: StringHandle;
+  ItemFlavorText: StringHandle;
 
   // Verbs for the four interactions
-  ToInteractWith_Text_66_C2148289464D5AAA4D19BBA13F15FE41: StringHandle;
-  ToLongInteractWith_Text_68_4FBE88F341B6A020E3216CA026A1E4E8: StringHandle;
-  ToPackage_Text_71_5094104748FCB4BD2F90C99A2C4C49A8: StringHandle;
-  ToLongPackage_Text_72_CB77853E49960F43E6422C90DC967508: StringHandle;
+  ToInteractWith_Text: StringHandle;
+  ToLongInteractWith_Text: StringHandle;
+  ToPackage_Text: StringHandle;
+  ToLongPackage_Text: StringHandle;
 
   // Inventory icon reference
-  InventoryIcon_50_57AF4D5548B1985502D209AB8854A797: AssetHandle;
+  InventoryIcon: AssetHandle;
 
   // Stats
-  StackSize_47_D124F11B4B6D9766B2B33699795845A9: number;
-  Weight_119_CE7DB430417207921D739CAF458D4D7C: number;
+  StackSize: number;
+  Weight: number;
 
   // Deploy orientations, see: E_DeployableOrientations
-  PlacementOrientationsAllowed_122_75894D7C4B93F103C06AB18421167757: string;
+  PlacementOrientationsAllowed: string;
 
   // Durability
-  CanLoseDurability_29_42EA515F4AC1EC69D8480DB36C01D5E1: boolean;
-  MaxItemDurability_31_6EBCEFC943F9E85DE9350BBC0E249447: number;
+  CanLoseDurability: boolean;
+  MaxItemDurability: number;
   // Is this applied to items only?
-  ChanceToLoseDurability_97_DF967C464092E2E6AEEBFE84C536ACAB: number;
-  RepairItem_106_C2E89B0B4B7F39FC3B2B828BBD13A391: ItemTableRowRepairItem;
+  ChanceToLoseDurability: number;
+  RepairItem: ItemTableRowRepairItem;
 
-  TryPlaceInHotbar_128_F78F6AA34A238AEAB278F48066C080BF: boolean;
+  TryPlaceInHotbar: boolean;
 
   // Specific types
-  IsWeapon_63_57F6A703413EA260B1455CA81F2D4911: boolean;
-  WeaponData_61_3C29CF6C4A7F9DD435F9318FEE4B033D: ItemTableRowWeaponData;
-  EquipmentData_100_576D05464F36104AFE501B878255E318: ItemTableRowEquipmentData;
-  SalvageData_81_DA79A7E04A8ED68D8B7D2F912AF0AEBB: DataTableRowHandle;
-  ConsumableData_84_757B6B114FF23016981BEF888A31C670: ItemTableRowConsumableData;
-  CookableData_94_7EFD1F0A4A7EFB44D3D8B9B14581BF36: ItemTableRowCookableData;
-  LiquidData_110_4D07F09C483C1E65B39024ABC7032FA0: ItemTableRowLiquidData;
+  IsWeapon: boolean;
+  WeaponData: ItemTableRowWeaponData;
+  EquipmentData: ItemTableRowEquipmentData;
+  SalvageData: DataTableRowHandle;
+  ConsumableData: ItemTableRowConsumableData;
+  CookableData: ItemTableRowCookableData;
+  LiquidData: ItemTableRowLiquidData;
 
   // ???
   // See: DT_ItemUseFlags
-  ItemUseFlags_127_753F84CF4AE10832188BD88A31F94F87?:
+  ItemUseFlags?:
     | DataTableRowHandle[]
     | null;
-  GameplayTags_138_C253BD3B4A4A21569AFC138CF0DDB59A?: string[] | null;
-  FPAnimationData_103_FFAE11A04A2E52F39BDCF5BA02948877: DataTableRowHandle;
-  FPAttachSocket_116_9BBC31B44A0C8DC200B003806CB6F10A: string;
-  TPAttachSocket_135_5DABD45F4B7CC7412C24F2A96BE45603: string;
+  GameplayTags?: string[] | null;
+  FPAnimationData: DataTableRowHandle;
+  FPAttachSocket: string;
+  TPAttachSocket: string;
 
   // Models, classes, etc...
-  ItemClass_7_A94CF32A438C7DF014B8E2AF8D01B0AB: AssetHandle;
-  WorldStaticMesh_19_71632A4B4A368D299BD41EA07881A95D: AssetHandle;
-  Scale_WorldMesh_143_AF66D856410026FCC19E70AC421B3667: number;
-  Scale_FirstPersonMesh_146_6AFCDB94484AE7625E73C6AFB835D21F: number;
-  Scale_TPHeldMesh_145_6826D00A4F30AEDBF62E02892E4261E6: number;
-  WorldSkeletalMesh_21_47A91367436724AEA6B6DA8259262399: AssetHandle;
-  WorldSkeletalMeshAnimation_22_90C4D72A48FA0FE5D934D880B2BF2943: AssetHandle;
-  DeployedItemClass_33_2CB440284F44C59CE124E4A806544272: AssetHandle;
-  DeployHologramMesh_55_E52DCCC54303C0963597E2A66F16A038: AssetHandle;
-  StrippedFromBuild_149_8F18A38A4BB983B801C379B47FC5D5A9: boolean;
-  TextureVariant_132_ADE79DC6445FF43625192BAF413DD666: DataTableRowHandle;
+  ItemClass: AssetHandle;
+  WorldStaticMesh: AssetHandle;
+  Scale_WorldMesh: number;
+  Scale_FirstPersonMesh: number;
+  Scale_TPHeldMesh: number;
+  WorldSkeletalMesh: AssetHandle;
+  WorldSkeletalMeshAnimation: AssetHandle;
+  DeployedItemClass: AssetHandle;
+  DeployHologramMesh: AssetHandle;
+  StrippedFromBuild: boolean;
+  TextureVariant: DataTableRowHandle;
 }
 export interface ItemTableRowRepairItem {
-  ItemDataTable_16_C430AEEE4D16DC471206DBBAA9F6796F: DataTableRowHandle;
-  QuantityMin_13_08A3850648D7ADA008D57FB0855F1474: number;
-  QuantityMax_14_6E8D8DF64637C2DD2E9DA59CBF7FAADF: number;
-  ChanceToDrop_12_45BEC64444296AFBC69AD280F4D2BEDB: number;
+  ItemDataTable: DataTableRowHandle;
+  QuantityMin: number;
+  QuantityMax: number;
+  ChanceToDrop: number;
 }
 export interface ItemTableRowWeaponData {
-  Melee_1_AB17935A4F944DCEEB1AB3A5B598E702: boolean;
-  MeleeSwingData_80_EA5C63F44178A08106BE41B8F7D8DE36: DataTableRowHandle;
-  SkeletalData_64_E0F5C13A4352D5DD3F09BCA89E206150: ItemTableRowSkeletalData;
-  FireSound_29_ACAACB32480D71F2E04FBC90CC2B2F29: DataTableIdentifier;
-  OptionalProjectileToFire_25_D40C00D0454A9F57AB0519BEB5370672: AssetHandle;
-  TimeBetweenShots_8_71ACC9414B36314DEF34B3A54649941C: number;
-  MaximumHitscanRange_26_F36D29CA48831A6C3AD49EB94F5D2BE2: number;
-  DamagePerHit_16_F95199D1425C37191C55CDA0DC07BDDC: number;
-  BulletSpread_Min_38_08ADC0BA4BEA02135BE0438A60AE5725: number;
-  BulletSpread_Max_39_4AE2E5744A934A3FFCEC2A9D7A1A6963: number;
-  DamageType_Hitscan_90_494ECC1043D5471AAB8B09AC08A80D80: DataTableIdentifier;
-  RecoilAmount_42_85AFA9834A1CABF8183C088D857840EE: number;
-  PelletCount_77_4504318146345E7029C78790B317E074: number;
-  MagazineSize_57_E890A3944240BB8D07EF0B9251F1FBD4: number;
-  RequireAmmo_85_8BB1C1954D2A83BB1994549DDEEBA306: boolean;
-  AmmoType_54_D19EDD9E48E4252D492757BFAAC23A73: DataTableRowHandle;
-  TPAnimationData_67_BE1F9C6445BEEFAE8A0C26AB7E43EA93: DataTableRowHandle;
-  SecondaryAttack_82_0ADE2DC74388F34F125F0DB6D9AAC1CD: string;
-  LoudnessOnPrimaryUse_74_7829648A4C3F44A62DCA09B3817DF796: number;
-  LoudnessOnSecondaryUse_73_89AB59C84EBC77DEB5DD2C9C88E9C237: number;
-  AmmoVisuals_88_A93123464F0C80A9B3E5C793FD0EB2DC: ItemTableRowAmmoVisuals;
-  UnderwaterState_95_972463794CBCCEA48AC987A7FA4C0118: string;
+  Melee: boolean;
+  MeleeSwingData: DataTableRowHandle;
+  SkeletalData: ItemTableRowSkeletalData;
+  FireSound: DataTableIdentifier;
+  OptionalProjectileToFire: AssetHandle;
+  TimeBetweenShots: number;
+  MaximumHitscanRange: number;
+  DamagePerHit: number;
+  BulletSpread_Min: number;
+  BulletSpread_Max: number;
+  DamageType_Hitscan: DataTableIdentifier;
+  RecoilAmount: number;
+  PelletCount: number;
+  MagazineSize: number;
+  RequireAmmo: boolean;
+  AmmoType: DataTableRowHandle;
+  TPAnimationData: DataTableRowHandle;
+  SecondaryAttack: string;
+  LoudnessOnPrimaryUse: number;
+  LoudnessOnSecondaryUse: number;
+  AmmoVisuals: ItemTableRowAmmoVisuals;
+  UnderwaterState: string;
 }
 export interface ItemTableRowSkeletalData {
-  WeaponSkeletalMesh_4_A0C557594452DB44D313619EB2F1CFBF: AssetHandle;
-  WeaponAnimationData_5_B390AB3F4B96BFF9100AF191A4F49575: DataTableRowHandle;
+  WeaponSkeletalMesh: AssetHandle;
+  WeaponAnimationData: DataTableRowHandle;
 }
 export interface ItemTableRowAmmoVisuals {
-  LoadedAmmoMesh_2_5080A92E4196DD88D00492B8BEF00911: AssetHandle;
-  LoadedAmmoVisuals_21_0D5A19A2430AF219E3EC0EB0F455AAAB?: unknown[] | null;
+  LoadedAmmoMesh: AssetHandle;
+  LoadedAmmoVisuals?: unknown[] | null;
 }
 export interface ItemTableRowEquipmentData {
-  EquipSlot_5_7DAF59D54ADD37B8594D91A65C47292E: string;
-  CanAutoEquip_7_8C31C7864D1203170E1ED4B7CD8D86B7: boolean;
-  ArmorBonus_18_84B6DFE74803168AF5603BB0EEE8EA4B: number;
-  DamageMitigationType_26_A9588042478434D0454984B9FC9DDD3B?: unknown[] | null;
-  IsContainer_13_34FE7C954474C022C6AEE48F5F8BA8AC: boolean;
-  ContainerCapacity_20_DC743D864AC6607638E3D2B6D044F42D: number;
-  ContainerWeightReduction_37_EDAD1C7B4B78383E02330C9186D35A2F: number;
-  InventoryPlaceSound_34_091D6ABA48452BFC350009A3FB09DCA5: AssetHandle;
-  SetBonus_47_CB28322D474A62221039CC98B6274502: ItemTableRowSetBonus;
+  EquipSlot: string;
+  CanAutoEquip: boolean;
+  ArmorBonus: number;
+  DamageMitigationType?: unknown[] | null;
+  IsContainer: boolean;
+  ContainerCapacity: number;
+  ContainerWeightReduction: number;
+  InventoryPlaceSound: AssetHandle;
+  SetBonus: ItemTableRowSetBonus;
 }
 export interface ItemTableRowSetBonus {
   RowName: string;
 }
 export interface ItemTableRowConsumableData {
-  TimeToConsume_32_8034526445B400D3948365AF202D7D0E: number;
-  HungerFill_5_0F5B3F3B46E595BD90371AA8D9C70A99: number;
-  ThirstFill_11_5F6F7BB94AF9FA42F990CF96FBE5B478: number;
-  FatigueFill_12_E90E1C3846E743D359DFC29B6B932BBC: number;
-  ContinenceFill_13_2B1EC44C41E46984971A9F95E6CFB3E7: number;
-  SanityFill_15_EA5C94304AEC5881C4A2C5A262CE916A: number;
-  TemperatureChange_14_9C12C233407D10A07EE1828308D28927: number;
-  RadiationChange_28_A69AB0FF4F262573EB722E82ACC010CE: number;
-  HealthChange_17_42D5968640F9B02C6414BDBDA2196B6B: number;
-  ArmorChange_19_16C741BA4535E6F6100D07B69FC1A0EA: number;
-  BuffsToAdd_23_0A2DBBC447537E9C754279951429DB87?: string[] | null;
-  BuffsToRemove_25_15B5DEA242CC72F8FE9C3C8CFD670842?: string[] | null;
-  ConsumableTag_37_FA7E5213470AE102881FF89660A5C58A: ItemTableRowConsumableTag;
-  ConsumedAction_40_42D12BB34169784F3396DAB8CEC3ACD9: string;
-  Radioactivity_43_0EF079AA43B77C98214300AD0CFB2F74: number;
+  TimeToConsume: number;
+  HungerFill: number;
+  ThirstFill: number;
+  FatigueFill: number;
+  ContinenceFill: number;
+  SanityFill: number;
+  TemperatureChange: number;
+  RadiationChange: number;
+  HealthChange: number;
+  ArmorChange: number;
+  BuffsToAdd?: string[] | null;
+  BuffsToRemove?: string[] | null;
+  ConsumableTag: ItemTableRowConsumableTag;
+  ConsumedAction: string;
+  Radioactivity: number;
 }
 export interface ItemTableRowConsumableTag {
   TagName: string;
 }
 export interface ItemTableRowCookableData {
-  IsCookware_36_E60FF3174809E5F04F20E290DEF53B8C: boolean;
-  CanBeCooked_1_F8283E94449BB680D9E4D0B6435E50F2: boolean;
-  CookedItem_11_EFC590354E4A63C58C41C3982B38F7DC: DataTableRowHandle;
-  BurnedItem_19_109C79FE416ADB62B4AC7E893BCD2958: DataTableRowHandle;
-  TimeToCookBaseline_26_EC459D4A450678325EB8409C755D7470: number;
-  TimeToBurnBaseline_29_A879BF574759AE7B242961AC5B2B62BC: number;
-  FarmableDataRow_48_7F52477E453E35CB6673A6914103179E: ItemTableRowSetBonus;
-  RequiresBaking_39_DBBD2AB047509D0C3B49169C342B3676: boolean;
-  StartingPortions_51_A4A87C9F4D96DFB285715B9C4EF3981D: number;
-  CanItemDecay_41_ED9D0360494304403FBDFAB9B4D33D35: boolean;
-  ItemDecayTemperature_47_E057BEE84D43178AA60FD59503C79701: string;
-  DecayToItem_46_BC887D114948DE4082DD63BC166B5DE2: DataTableRowHandle;
+  IsCookware: boolean;
+  CanBeCooked: boolean;
+  CookedItem: DataTableRowHandle;
+  BurnedItem: DataTableRowHandle;
+  TimeToCookBaseline: number;
+  TimeToBurnBaseline: number;
+  FarmableDataRow: ItemTableRowSetBonus;
+  RequiresBaking: boolean;
+  StartingPortions: number;
+  CanItemDecay: boolean;
+  ItemDecayTemperature: string;
+  DecayToItem: DataTableRowHandle;
 }
 export interface ItemTableRowLiquidData {
-  MaxLiquid_16_80D4968B4CACEDD3D4018E87DA67E8B4: number;
-  AllowedLiquids_7_1DF3EB8C43F49DA3A1E4A2AF908148D3?: string[] | null;
-  PercentageLiquidToStartWith_11_835A4C4F440C319874D3EFA75CAFA4C5: number;
-  LiquidToStartWith_15_F7D753A24D2130B92AF312AB9192AD9C?: string[] | null;
+  MaxLiquid: number;
+  AllowedLiquids?: string[] | null;
+  PercentageLiquidToStartWith: number;
+  LiquidToStartWith?: string[] | null;
 }

@@ -1,4 +1,5 @@
 import { injectable } from 'tsyringe';
+import { cleanObjectKeys } from '../utils/cleanObjectKeys';
 import { ObjectsService } from './ObjectsService';
 import {
   DataTableBlueprintEntry,
@@ -32,6 +33,6 @@ export class DataTablesService {
     const dataTable = await this.objectsService.getObject<
       DataTableBlueprintEntry<RowDataType>
     >(identifier);
-    return dataTable;
+    return cleanObjectKeys(dataTable);
   }
 }
